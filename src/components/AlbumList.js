@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import { StyleSheet, View, FlatList } from 'react-native';
-import {Text} from 'react-native-elements';
 import AlbumDetail from './AlbumDetail';
 
 import axios from 'axios';
@@ -17,7 +16,6 @@ export default function AlbumList() {
   }, []);
 
   return (
-      <View style={styles.container}>
         <FlatList
           data={albums}
           keyExtractor={(album) => album.title}
@@ -25,10 +23,10 @@ export default function AlbumList() {
             return <AlbumDetail
               title ={item.title}
               artist={item.artist}
+              thumbnail={item.thumbnail_image}
              />
           }}
         />
-      </View>
   );
 }
 
