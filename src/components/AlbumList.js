@@ -24,6 +24,8 @@ export default function AlbumList() {
               title ={item.title}
               artist={item.artist}
               thumbnail={item.thumbnail_image}
+              img={item.image}
+              vender={item.url}
              />
           }}
         />

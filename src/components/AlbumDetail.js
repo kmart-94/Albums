@@ -15,7 +15,17 @@ export default function AlbumDetail({title, artist, img, thumbnail, vender}) {
             </View>
             <View style={styles.textContainer}>
               <Text h3>{title}</Text>
-              <Text h3>{artist}</Text>
+              <Text h4>{artist}</Text>
+            </View>
+          </CardSection>
+          <CardSection>
+            <View>
+              <Image source={{uri: img}} style={styles.albumCover}/>
+            </View>
+          </CardSection>
+          <CardSection>
+            <View>
+              
             </View>
           </CardSection>
         </Card>
@@ -24,9 +34,15 @@ export default function AlbumDetail({title, artist, img, thumbnail, vender}) {
 
 const styles = StyleSheet.create({
   thumbnail: {
-    marginRight: 20
+    marginRight: 20,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   textContainer: {
     justifyContent: 'space-around'
+  },
+  albumCover: {
+    width: '100%',
+    aspectRatio: 1
   }
 });

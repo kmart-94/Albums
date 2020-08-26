@@ -12,12 +12,11 @@ export default function CardSection({children}) {
 
 const styles = StyleSheet.create({
   container: {
+    width: '100%',
     borderBottomWidth: 1,
     padding: 5,
-    backgroundColor: '#fff',
     justifyContent: 'flex-start',
     flexDirection: 'row',
-    borderColor: '#ddd',
-    position: 'relative'
+    borderColor: '#ddd'
   }
 });
