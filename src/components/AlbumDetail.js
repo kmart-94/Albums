@@ -1,10 +1,12 @@
 import React from 'react';
 import { StyleSheet, View, Image } from 'react-native';
-import { Text} from 'react-native-elements';
+import { Text, Button } from 'react-native-elements';
 import Card from './Card';
 import CardSection from './CardSection';
+import * as Linking from 'expo-linking';
 
 import { MaterialIcons } from '@expo/vector-icons';
+
 
 export default function AlbumDetail({title, artist, img, thumbnail, vender}) {
   return (
@@ -24,8 +26,14 @@ export default function AlbumDetail({title, artist, img, thumbnail, vender}) {
             </View>
           </CardSection>
           <CardSection>
-            <View>
-              
+            <View style={styles.buttonSection}>
+              <Button
+                title="Buy Now"
+                buttonStyle={styles.button}
+                onPress={() => {
+                  Linking.openURL(vender);
+                }}
+              />
             </View>
           </CardSection>
         </Card>
@@ -44,5 +52,14 @@ const styles = StyleSheet.create({
   albumCover: {
     width: '100%',
     aspectRatio: 1
+  },
+  buttonSection: {
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  button: {
+    width: 150,
+    height: 50
   }
 });
