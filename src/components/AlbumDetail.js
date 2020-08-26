@@ -10,8 +10,9 @@ export default function AlbumDetail({title, artist, img, thumbnail, vender}) {
   return (
         <Card>
           <CardSection>
-            <Image source={{uri: thumbnail}} style={styles.thumbnail}/>
-            <MaterialIcons name="album" size={80} color="black" />
+            <View style={styles.thumbnail}>
+              <MaterialIcons name="album" size={80} color="black" />
+            </View>
             <View style={styles.textContainer}>
               <Text h3>{title}</Text>
               <Text h3>{artist}</Text>
@@ -23,7 +24,7 @@ export default function AlbumDetail({title, artist, img, thumbnail, vender}) {
 
 const styles = StyleSheet.create({
   thumbnail: {
-    height: 80
+    marginRight: 20
   },
   textContainer: {
     justifyContent: 'space-around'
